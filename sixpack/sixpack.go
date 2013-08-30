@@ -5,9 +5,11 @@ import (
 	"errors"
 	"fmt"
 	"io/ioutil"
+	"net"
 	"net/http"
 	"net/url"
 	"regexp"
+	"time"
 )
 
 const pattern string = `^[a-z0-9][a-z0-9\-_ ]*$`
@@ -73,7 +75,19 @@ func NewSession(opts Options) (*Session, error) {
 		opts.BaseUrl = u
 	}
 
-	return &Session{Client: &http.Client{}, Options: &opts}, nil
+	timeout := time.Duration(250 * time.Millisecond)
+	transport := http.Transport{
+		Dial: func(network, addr string) (net.Conn, error) {
+			return net.DialTimeout(network, addr, timeout)
+		},
+	}
+
+	return &Session{
+		Client: &http.Client{
+			Transport: &transport,
+		},
+		Options: &opts,
+	}, nil
 }
 
 func (s *Session) Participate(name string, alternatives []string, force string) (r *Response, err error) {
