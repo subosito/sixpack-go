@@ -41,3 +41,6 @@ opts := sixpack.Options{
 session := sixpack.NewSession(opts)
 ```
 
+## What is Sixpack?
+
+Sixpack is a language-agnostic ab testing framework. It makes it easy to run A/B tests across multiple web services written in different languages. Go to http://sixpack.seatgeek.com/ for more details.
