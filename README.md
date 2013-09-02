@@ -9,7 +9,7 @@ Here's the basic example:
 ```go
 // import "github.com/subosito/sixpack-go/sixpack"
 
-session, err := sixpack.NewSession(Options{})
+session, err := sixpack.NewSession(sixpack.Options{})
 if err != nil {
 	t.Error(err)
 }
@@ -43,4 +43,4 @@ session := sixpack.NewSession(opts)
 
 ## What is Sixpack?
 
-Sixpack is a language-agnostic ab testing framework. It makes it easy to run A/B tests across multiple web services written in different languages. Go to http://sixpack.seatgeek.com/ for more details.
+[Sixpack](http://sixpack.seatgeek.com/) is a language-agnostic AB testing framework. It makes easy to run A/B tests across multiple web services written in different languages.
