@@ -43,6 +43,10 @@ opts := sixpack.Options{
 session := sixpack.NewSession(opts)
 ```
 
+## Notes
+
+The sixpack-go package is tested using drone.io services. You can see the build script on https://gist.github.com/subosito/6412007.
+
 ## What is Sixpack?
 
 [Sixpack](http://sixpack.seatgeek.com/) is a language-agnostic AB testing framework. It makes easy to run A/B tests across multiple web services written in different languages.
