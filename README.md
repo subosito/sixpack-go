@@ -1,5 +1,7 @@
 # sixpack-go
 
+[![Build Status](https://drone.io/github.com/subosito/sixpack-go/status.png)](https://drone.io/github.com/subosito/sixpack-go/latest)
+
 Go client library for SeatGeek's Sixpack AB testing framework.
 
 ## Usage
