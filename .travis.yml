@@ -1,0 +1,11 @@
+language: go
+go: 1.1
+services:
+  - redis-server
+before_script:
+  - apt-get install python-pip python-dev build-essential
+  - pip install sixpack
+  - SIXPACK_CONFIG=$PWD/sixpack.yml sixpack
+script:
+  - cd sixpack
+  - go test -v
